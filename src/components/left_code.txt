@@ -1,0 +1,30 @@
+currency: $,
+	expenses: [
+	{id: "Dollar", name: '$ Dollar', value: $},
+	{id: "Euro", name: '€ Euro', value: €},
+	{id: "Pounds", name: '£ Pounds', value: £},
+	{id: "Rupee", name: '₹ Rupee', value:₹},
+	
+	
+	
+	
+		const ChgCurrency = (name) => {
+		const chg_currency = return (<div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
+                    <div className="input-group-prepend">
+                <label className="input-group-text" htmlFor="SelectCur1">Currency: </label>
+                </div>
+                  <select className="custom-select" id="SelectCur1" onChange={(event) => setName(event.target.value)}>
+                        <option defaultValue>Choose...</option>
+                        <option value="Dollar" name="dollar">$ Dollar</option>
+						<option value="Euro" name="euro">€ Euro</option>
+						<option value="Pounds" name="pounds">£ Pounds</option>
+						<option value="Rupee" name="rupee">₹ Rupee</option>
+                 </select>); 
+
+	}
+	dispatch({
+			type: 'CHG_CURRENCY',
+			payload: chg_currency
+		});
+	
+	]
