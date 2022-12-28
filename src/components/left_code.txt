@@ -28,3 +28,121 @@ currency: $,
 		});
 	
 	]
+	
+	
+	
+	
+	/*
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+
+
+import { budget } from '../context/AppContext';
+
+import { currency } from '../context/AppContext';
+ 
+	
+const Budget = () => {
+	const { budget } = useContext(AppContext);		
+	
+	
+
+	return (
+		<div className='alert alert-secondary'>
+			<span>Budget: {currency}{budget - totbud}<input type="number" min = "0"step = "10" placeholder = {budget} onchange={(event) => totbud(this.value)   }></input>
+				
+			</span>
+			
+		</div>
+	);
+};
+
+export default Budget;
+*/
+////
+
+
+
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+
+
+const Budget = () => {
+
+/*
+	const { currency } = useContext(AppContext);
+	
+const { expenses, budget } = useContext(AppContext);
+	let budg = document.getElemetByID('budchg').value;
+
+   const totalExpenses = expenses.reduce((budget, budg) => {
+      return (budget = budget + budg);
+    }, 0);
+*/
+
+	
+	
+	
+	
+	
+	const { currency } = useContext(AppContext);
+	let { budget, expenses } = useContext(AppContext);
+	
+	const totalCng = expenses.reduce ((total, budg) => {
+		return (total = total + budg.value);
+	}
+	
+	, 0)
+	
+	
+	
+	
+let budg = document.getElementById('budchg');
+//	budget = budget + budg;
+	
+	return (
+		<div className='alert alert-secondary'>
+			<span>Budget: {currency}{budget} <input type="number" id="budchg" step="10" onchange='budg(this.value)'></input> </span>
+		</div>
+	);
+};
+
+export default Budget;
+
+
+//Currency
+
+/*
+
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+
+const Budget = () => {
+	const { budget,dispatch,expenses } = useContext(AppContext);
+
+	const changeBudget = (val)=>{
+		const totalExpenses = expenses.reduce((total, item) => {
+			return (total += item.cost);
+		}, 0);
+
+		
+		if(val<totalExpenses) {
+			alert("You cannot reduce the budget that is already allocated!");
+		} else {
+			dispatch({
+				type: 'SET_BUDGET',
+				payload: val,
+			})
+			}
+	}
+	
+	return (
+		<div className='alert alert-secondary'>
+			<input type="number" step="10" value={budget} onInput={(event)=>changeBudget(event.target.value)}></input>
+		</div>
+	);
+};
+
+export default Budget;
+
+*/
